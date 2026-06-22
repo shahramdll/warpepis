@@ -48,6 +48,11 @@ endipv4() {
 		if [ $n -ge $iplist ]; then
 			break
 		fi
+		temp[$n]=$(echo 8.6.112.$(($RANDOM % 256)))
+		n=$(($n + 1))
+		if [ $n -ge $iplist ]; then
+			break
+		fi
 		temp[$n]=$(echo 162.159.193.$(($RANDOM % 256)))
 		n=$(($n + 1))
 		if [ $n -ge $iplist ]; then
@@ -84,6 +89,12 @@ endipv4() {
 			break
 		else
 			temp[$n]=$(echo 162.159.192.$(($RANDOM % 256)))
+			n=$(($n + 1))
+		fi
+		if [ $(echo "${temp[@]}" | sed -e 's/ /\n/g' | sort -u | wc -l) -ge $iplist ]; then
+			break
+		else
+			temp[$n]=$(echo 8.6.112.$(($RANDOM % 256)))
 			n=$(($n + 1))
 		fi
 		if [ $(echo "${temp[@]}" | sed -e 's/ /\n/g' | sort -u | wc -l) -ge $iplist ]; then
