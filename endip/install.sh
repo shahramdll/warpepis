@@ -47,6 +47,7 @@ endipv4() {
 		n=$(($n + 1))
 		if [ $n -ge $iplist ]; then
 			break
+		fi
 		temp[$n]=$(echo 188.114.96.$(($RANDOM % 256)))
 		n=$(($n + 1))
 		if [ $n -ge $iplist ]; then
