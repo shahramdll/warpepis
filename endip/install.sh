@@ -43,26 +43,10 @@ endipv4() {
 	n=0
 	iplist=100
 	while true; do
-		temp[$n]=$(echo 162.159.192.$(($RANDOM % 256)))
-		n=$(($n + 1))
-		if [ $n -ge $iplist ]; then
-			break
-		fi
 		temp[$n]=$(echo 8.6.112.$(($RANDOM % 256)))
 		n=$(($n + 1))
 		if [ $n -ge $iplist ]; then
 			break
-		fi
-		temp[$n]=$(echo 162.159.193.$(($RANDOM % 256)))
-		n=$(($n + 1))
-		if [ $n -ge $iplist ]; then
-			break
-		fi
-		temp[$n]=$(echo 162.159.195.$(($RANDOM % 256)))
-		n=$(($n + 1))
-		if [ $n -ge $iplist ]; then
-			break
-		fi
 		temp[$n]=$(echo 188.114.96.$(($RANDOM % 256)))
 		n=$(($n + 1))
 		if [ $n -ge $iplist ]; then
